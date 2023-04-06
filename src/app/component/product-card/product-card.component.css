@@ -85,10 +85,6 @@ font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-se
   margin-top: 30px;
 }
 
-.btn-success{
-  --bs-btn-bg:black;
-  width: 100%;    
-}
 
 .middle-container:hover{
   visibility: visible;
@@ -99,8 +95,32 @@ font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-se
     visibility: hidden;
     width:100%;
     height:40%;
-    } 
-    .card   .middle{
-      visibility: visible;
-    }
+} 
+
+.card:hover   .middle{
+    visibility: visible;
+}
+
+.product-text{
+  display: inline-block;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.description-text{
+  display: inline-block;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.svgColor{
+  fill: rgb(221, 58, 58);
+}
+
+
+
     

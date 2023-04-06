@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { Product } from './product-card.module';
+// import { Product } from './product-card.module';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-product-card',
@@ -7,17 +8,14 @@ import { Product } from './product-card.module';
   styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent implements OnInit {
+  public product:any;
 
-  @Input() product!:Product;
-
-  getValue(){
-    alert("Product added successfully.");
-  }
-  constructor() { 
-    // console.log(this.product);
+  constructor(private api: ApiService) { 
   }
 
   ngOnInit(): void {
-    // console.log(this.product);
+    this.api.getData().subscribe(res=>{
+      this.product=res;
+    })
   }
 }

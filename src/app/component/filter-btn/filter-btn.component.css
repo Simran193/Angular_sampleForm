@@ -92,14 +92,9 @@ font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-se
 
 .middle{
   /* display:none;  */
-  visibility: hidden;
-    margin-top: auto;
+    visibility: hidden;
     width:100%;
     height:40%;
-    display: flex;
-    align-items: flex-end;
-    opacity:0.9;
-    background:linear-gradient(360deg,#5e5d5d 0%,transparent 100%);
     } 
     .card:hover   .middle{
       visibility: visible;
