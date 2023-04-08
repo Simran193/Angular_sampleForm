@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormGroup,FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SignUpServiceService } from 'src/app/service/sign-up-service.service';
 
 
@@ -8,7 +8,7 @@ import { SignUpServiceService } from 'src/app/service/sign-up-service.service';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
   userForm=new FormGroup({
     firstName: new FormControl(null,[Validators.required,Validators.minLength(2)]),
     lastName: new FormControl(null,[Validators.required, Validators.minLength(2)]),
@@ -20,10 +20,8 @@ export class SignUpComponent {
   constructor(private formBuilder: FormBuilder,private userService:SignUpServiceService) { }
 
   ngOnInit(): void {
-
   }
-  
-  
+
   OnSubmit(){
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.userForm.value));
     this.user=Object.assign(this.user,this.userForm.value)
@@ -43,4 +41,5 @@ export class SignUpComponent {
   get password(){
     return this.userForm.get('password');
   }
+
 }

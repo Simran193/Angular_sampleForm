@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginServiceService } from 'src/app/service/login-service.service';
 
 @Component({
@@ -7,12 +8,13 @@ import { LoginServiceService } from 'src/app/service/login-service.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   loginForm=new FormGroup({
-    email: new FormControl(null,[Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
-    password: new FormControl(null,[Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
-  })
-  constructor(private loginUser: LoginServiceService) { }
+    email: new FormControl(null),
+    password: new FormControl(null),
+  });
+
+  constructor(private loginUser: LoginServiceService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,11 +23,15 @@ export class LoginComponent {
     console.log(this.loginForm.value)
     const user=this.loginUser.loginUser(this.loginForm.value);
     console.log(user);
+    let login;
     if(user){
-      alert("Login Done");
+      this.router.navigate(['/home']);
+      login="true";
+      localStorage.setItem('login',login)
     }
     else{
-      alert("Email or Password is wrong.");
+      alert("Email or password wrong");
+      login="false";
     }
   }
 

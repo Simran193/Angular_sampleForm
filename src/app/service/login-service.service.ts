@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class LoginServiceService {
 
   constructor() { }
+
   loginUser(user:any){
     let userArray=[];
     if(localStorage.getItem('User')){
