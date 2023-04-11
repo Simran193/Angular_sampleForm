@@ -32,7 +32,7 @@ export const selectGroupedCartEntries = createSelector(
       if (map.get(p.id)) {
         (map.get(p.id) as ProductGroup).count++;
       } else {
-        map.set(p.id, { product: p, count: 1 });
+          map.set(p.id, { product: p, count: 1 });
       }
     })
 
