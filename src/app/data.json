@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "firstName": "simran",
+      "lastName": "kaur",
+      "email": "simran1@gmail.com",
+      "password": "Abc@98761",
+      "dob": "2023-04-04",
+      "gender": "female",
+      "phone": "1234567890",
+      "id": 1
+    }
+  ]
+}

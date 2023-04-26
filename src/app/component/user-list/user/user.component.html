@@ -1,0 +1,28 @@
+<h3>Users List</h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">DOB</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of dataSource">
+        <th scope="row">{{data.id}}</th>
+        <td>{{data.firstName}}</td>
+        <td>{{data.lastName}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.password}}</td>
+        <td>{{data.dob}}</td>
+        <td>{{data.phone}}</td>
+        <td>{{data.gender}}</td>
+        
+      </tr>
+    </tbody>
+  </table>

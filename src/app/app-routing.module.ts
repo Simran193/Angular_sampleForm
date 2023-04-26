@@ -1,37 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CartComponent } from './component/cart/cart.component';
-import { HomeComponent } from './component/home/home.component';
-import { LoginComponent } from './component/login/login.component';
-import { ProductCardComponent } from './component/product-card/product-card.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
+import { UserComponent } from './component/user-list/user/user.component';
+
 
 const routes: Routes = [
-  {
-    path:'login',
-    component:LoginComponent
-  },
   {
     path:'sign-up',
     component:SignUpComponent
   },
   {
-    path:'product-card',
-    component:ProductCardComponent
-  },
-  {
-    path:'home',
-    component:HomeComponent
-  },
-  {
-    path:'cart',
-    component:CartComponent
+    path:'user-list',
+    component:UserComponent
   },
   {
     path:'',
-    redirectTo: 'home',
+    redirectTo: 'sign-up',
     pathMatch: 'full'
   }
+  
 ];
 
 @NgModule({
